@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test of a New Beautiful Table</title>
+
+  <style>
+    body,
+    html {
+      margin: 0;
+      font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .block {
+      width: 800px;
+      margin-top: 40px;
+    }
+
+    #editorjs {
+      width: 900px;
+      min-height: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <script src="test.js"></script>
+
+  <script>
+
+    const data = {blocks: [
+          {
+            id: "XXVTfnMlcE",
+            type: "table",
+            data: {
+              withHeadings: true,
+              "content": {
+                "0": {
+                  "0": "TEST",
+                  "1": "TABLE"
+                },
+                "1": {
+                  "0": "OF",
+                  "1": "DATA"
+                }
+              },
+            }
+          }
+        ],
+        version: "2.22.1"
+      }
+
+    const f = editorJsParser(data.blocks)
+    
+  </script>
+</body>
+
+</html>
