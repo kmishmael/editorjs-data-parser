@@ -42,7 +42,7 @@ const editorJsParser = (value: any[]) => {
           editorData += link(element.data.link);
           break;
         case 'list':
-          editorData += list(element.data.items);
+          editorData += list(element.data.items, element.data.style);
           break;
         case 'paragraph':
           editorData += paragraph(element.data.text);

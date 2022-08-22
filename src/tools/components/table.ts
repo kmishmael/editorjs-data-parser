@@ -16,12 +16,18 @@ export const table = (params: { data: { content: string[][], withHeadings: boole
   }
 
   template = `
-    <div class='tc-wrap'>
-        <div class="tc-table">
+  <div class="ce-block">
+    <div class="ce-block__content">
+      <div class="cdx-block">
+        <div class="tc-wrap">
+          <div class="tc-table">
             ${tableHeader}
             ${tableBody}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
   `;
 
   return template;
@@ -46,32 +52,3 @@ function getHeader(params: { data: { content: string[][], withHeadings: boolean 
   return headerBody;
 
 }
-
-/*
-  let tableHeader = '';
-  let tableBody = '';
-  let template = '';
-
- 
-  tableHeader = getHeader(params)
-
-  for (let i = 1; i < params.data.content.length; i++) {
-    tableBody += `<tr>`;
-
-    params.data.content[i].forEach((body) => {
-      tableBody += `<td>${body}</td>`;
-    });
-    tableBody += `</tr>`;
-  }
-
-  template = `
-    <table class='ejs-table'>
-    ${tableHeader}
-        <tbody class="ejs-table__body">
-            ${tableBody}
-        </tbody>
-    </table>
-  `;
-
-  return template;
-  */
