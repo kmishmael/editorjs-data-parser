@@ -2,7 +2,7 @@ export const table = (params: { data: { content: string[][], withHeadings: boole
   let tableHeader = '';
   let tableBody = '';
   let template = '';
-  let headerClass = (params.data.withHeadings) ? 'tc-table--heading' : '';
+  let headerClass = (params.data.withHeadings) ? 'with-heading' : '';
 
  
   tableHeader = (params.data.withHeadings) ? getHeader(params) : ''
@@ -10,17 +10,13 @@ export const table = (params: { data: { content: string[][], withHeadings: boole
   tableBody = getBody(params)
 
   template = `
-  <div class="ce-block">
-    <div class="ce-block__content">
-      <div class="cdx-block">
-        <div class="tc-wrap">
-          <div class="tc-table ${headerClass}">
+  <div class="table">
+
+          <table class="${headerClass}">
             ${tableHeader}
             ${tableBody}
-          </div>
-        </div>
-      </div>
-    </div>
+          </table>
+
   </div>
   `;
 
@@ -32,12 +28,16 @@ function getBody(params: { data: { content: string[][], withHeadings: boolean } 
   let index = (params.data.withHeadings) ? 1 : 0
 
   for (let i = index; i < params.data.content.length; i++) {
-    tableBody += `<div class="tc-row">`;
+    tableBody += `<tr>
+    
+    `;
 
     params.data.content[i].forEach((body) => {
-      tableBody += `<div class="tc-cell">${body}</div>`;
+      tableBody += `<td>${body}</td>`;
     });
-    tableBody += `</div>`;
+    tableBody += `
+    
+    </tr>`;
   }
 
   return tableBody
@@ -49,13 +49,15 @@ function getHeader(params: { data: { content: string[][], withHeadings: boolean 
 
   if(params.data.withHeadings){
     params.data.content[0].forEach((head) => {
-      header += `<div class="tc-cell" heading="Heading">${head}</div>`;
+      header += `<th>${head}</th>`;
     });
 
     headerBody = `  
-      <div class="tc-row">
+      <tr>
+
         ${header}
-      </div>
+
+      </tr>
       `
   }
 

@@ -3,56 +3,44 @@ export const header = (param: string, type: number) => {
   switch (type) {
     case 1:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h1 class="ce-header">${param}</h1>
-        </div>
-      </div>
+
+          <h1>${param}</h1>
+
       `;
       break;
     case 2:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h2 class="ce-header">${param}</h2>
-        </div>
-      </div>
+
+          <h2>${param}</h2>
+
       `;
       break;
     case 3:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h3 class="ce-header">${param}</h3>
-        </div>
-      </div>
+ 
+          <h3>${param}</h3>
+ 
       `;
       break;
     case 4:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h4 class="ce-header">${param}</h4>
-        </div>
-      </div>
+   
+          <h4>${param}</h4>
+
       `;
       break;
     case 5:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h5 class="ce-header">${param}</h5>
-        </div>
-      </div>
+     
+          <h5>${param}</h5>
+
       `;
       break;
     case 6:
       headerValue += `
-      <div class="ce-block">
-        <div class="ce-block__content">
-          <h6 class="ce-header">${param}</h6>
-        </div>
-      </div>
+
+          <h6>${param}</h6>
+
       `;
       break;
     default:
